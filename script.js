@@ -4,6 +4,8 @@ container.classList.add("container");
 const title = document.createElement("h1");
 title.classList.add("keyboard__title");
 title.innerText = "RSS Virtual Keboard";
+const inputText = document.createElement("textarea");
+inputText.classList.add("keyboard__text");
 const keyboardWrapper = document.createElement("div");
 keyboardWrapper.classList.add("keyboard-wrapper");
 const keyboardKeys = document.createElement("div");
@@ -13,11 +15,9 @@ keyboardRow.classList.add("keyboard-row");
 
 body.append(container);
 container.append(title);
+container.append(inputText);
 container.append(keyboardWrapper);
 keyboardWrapper.append(keyboardKeys); 
-
-
-
 
 const createKeys =()=>{
   const fragment = document.createDocumentFragment();
