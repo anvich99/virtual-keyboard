@@ -10,6 +10,10 @@
   flex-direction: column;
   margin: 0 10px;
 }
+.keyboard__title{
+  text-transform: uppercase;
+  color:darkslategray;
+}
 .keyboard-wrapper{
   max-width: 1000px;
   width: 100%;

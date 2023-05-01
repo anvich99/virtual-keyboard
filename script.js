@@ -1,6 +1,9 @@
 const body = document.body;
 const container = document.createElement("div");
 container.classList.add("container");
+const title = document.createElement("h1");
+title.classList.add("keyboard__title");
+title.innerText = "RSS Virtual Keboard";
 const keyboardWrapper = document.createElement("div");
 keyboardWrapper.classList.add("keyboard-wrapper");
 const keyboardKeys = document.createElement("div");
@@ -9,6 +12,7 @@ const keyboardRow = document.createElement("ul");
 keyboardRow.classList.add("keyboard-row");
 
 body.append(container);
+container.append(title);
 container.append(keyboardWrapper);
 keyboardWrapper.append(keyboardKeys); 
 
