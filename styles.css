@@ -1,0 +1,26 @@
+.body{
+  font-family: 'Inter', sans-serif;
+  transition: .2s;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  margin: 0 10px;
+}
+.keyboard-wrapper{
+  max-width: 1000px;
+  width: 100%;
+  background-color: #e7e7e7;
+  overflow: hidden;
+  position: relative;
+}
+.key__backspace{
+  width: 100px;
+  background-color: red;
+}
+.keyboard-row{
+  display: flex;
+}
