@@ -20,14 +20,12 @@ container.append(keyboardWrapper);
 keyboardWrapper.append(keyboardKeys); 
 
 const createKeys =()=>{
-  const fragment = document.createDocumentFragment();
   const keyLayoutLineOne = ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "backspace"];
   const keyLayoutLineTwo = ["tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", '\\'];
   const keyLayoutLineThree = ["caps lock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "enter",];
   const keyLayoutLineFour = ["shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/",  "up","shift",];
   const keyLayoutLineFive = ["ctrl", "win", "alt", "space", "alt", , "left", "down", "right", "ctrl" ];
-  const insertLineBreak = ["backspace","`\`", "enter", "shift", "right"];
-
+  
   const createLineOne =() =>{
     const keyboardRow = document.createElement("div");
     keyboardRow.classList.add("keyboard-row");
@@ -83,8 +81,8 @@ const createKeys =()=>{
       keyboardRow.append(keys);
       keyboardKeys.append(keyboardRow);
       if (key === "shift"){
-      keys.classList.add("shift_key");
-    }
+        keys.classList.add("shift_key");
+      }
     });
   }
   
@@ -110,3 +108,39 @@ const createKeys =()=>{
   createLineFive();
 }
 createKeys()
+
+const keys = document.querySelectorAll(".keys");
+const spaceKey = document.querySelector(".space_key");
+const caps = document.querySelector(".caps-lock_key");
+const shiftRight = document.querySelectorAll(".shift_key")[1];
+const shiftLeft = document.querySelectorAll(".shift_key")[0];
+const attributes = [... keys];
+attributes.map((key) => {
+  key.setAttribute("keyname", key.innerText);
+  key.setAttribute("lowerCase", key.innerText.toLowerCase());
+});
+window.addEventListener("keydown", (e)=>{
+  attributes.map((key) =>{
+    if(e.key == key.getAttribute("lowerCase")|| e.key == key.getAttribute("lowerCase")){
+      key.classList.add("active");
+    };
+    if(e.code == "Space"){
+      spaceKey.classList.add(active);
+    };
+    if(e.code == "ShiftLeft"){
+      spaceKey.classList.remove("active");
+    }
+  })
+})
+
+window.addEventListener("keyup", (e)=>{
+  attributes.map((key) =>{
+    if(e.key == key.getAttribute("lowerCase")|| e.key == key.getAttribute("lowerCase")) {
+      key.classList.remove("active");
+      key.classList.add("remove");
+    }
+    setTimeout(() => {
+      key.remove(remove)
+    });
+  })
+})
