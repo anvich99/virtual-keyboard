@@ -18,10 +18,10 @@ keyboardWrapper.append(keyboardKeys);
 const createKeys =()=>{
   const fragment = document.createDocumentFragment();
   const keyLayoutLineOne = ["`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "backspace"];
-  const keyLayoutLineTwo = ["tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "`\`"];
+  const keyLayoutLineTwo = ["tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", '\\'];
   const keyLayoutLineThree = ["caps lock", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "enter",];
-  const keyLayoutLineFour = ["shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/", "up", "shift",];
-  const keyLayoutLineFive = ["ctrl", "win", "alt", "space", "alt", "ctrl", "left", "down", "right" ];
+  const keyLayoutLineFour = ["shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/",  "up","shift",];
+  const keyLayoutLineFive = ["ctrl", "win", "alt", "space", "alt", , "left", "down", "right", "ctrl" ];
   const insertLineBreak = ["backspace","`\`", "enter", "shift", "right"];
 
   const createLineOne =() =>{
@@ -33,6 +33,9 @@ const createKeys =()=>{
       keys.innerText = key[0].toUpperCase() + key.slice(1);
       keyboardRow.append(keys);
       keyboardKeys.append(keyboardRow);
+      if (key === "backspace"){
+        keys.classList.add("backspace_key");
+      }
     });
   }
   const createLineTwo = () =>{
@@ -44,6 +47,9 @@ const createKeys =()=>{
     keys.innerText = key[0].toUpperCase() + key.slice(1);
     keyboardRow.append(keys);
     keyboardKeys.append(keyboardRow);
+    if (key === "tab" || key === "\\"){
+        keys.classList.add("tab-slesh_key");
+      }
   });
   }
   const createLineThree = () => {
@@ -55,6 +61,12 @@ const createKeys =()=>{
     keys.innerText = key[0].toUpperCase() + key.slice(1);
     keyboardRow.append(keys);
     keyboardKeys.append(keyboardRow);
+    if (key === "caps lock"){
+      keys.classList.add("caps-lock_key");
+    }
+    if (key === "enter"){
+      keys.classList.add("enter_key");
+    }
   });
   }
   const createLineFour = () =>{
@@ -66,6 +78,9 @@ const createKeys =()=>{
       keys.innerText = key[0].toUpperCase() + key.slice(1);
       keyboardRow.append(keys);
       keyboardKeys.append(keyboardRow);
+      if (key === "shift"){
+      keys.classList.add("shift_key");
+    }
     });
   }
   
@@ -78,6 +93,9 @@ const createKeys =()=>{
       keys.innerText = key[0].toUpperCase() + key.slice(1);
       keyboardRow.append(keys);
       keyboardKeys.append(keyboardRow);
+      if (key === "space"){
+      keys.classList.add("space_key");
+    }
     })
   }
   

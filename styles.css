@@ -24,3 +24,32 @@
 .keyboard-row{
   display: flex;
 }
+.keys{
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  transition: 0.2s;
+}
+.backspace_key,
+.enter_key{
+  width: 120px;
+}
+
+.tab-slesh_key{
+  width: 90px;
+}
+.caps-lock_key{
+  width: 128px;
+}
+.shift_key{
+  width: 124px;
+}
+.space_key{
+  max-width: 460px;
+  width: 100%;
+  font-size: 0;
+}
