@@ -114,6 +114,7 @@ const spaceKey = document.querySelector(".space_key");
 const caps = document.querySelector(".caps-lock_key");
 const shiftRight = document.querySelectorAll(".shift_key")[1];
 const shiftLeft = document.querySelectorAll(".shift_key")[0];
+const enter = document.querySelector(".enter_key");
 const attributes = [... keys];
 attributes.map((key) => {
   key.setAttribute("keyname", key.innerText);
@@ -125,10 +126,19 @@ window.addEventListener("keydown", (e)=>{
       key.classList.add("active");
     };
     if(e.code == "Space"){
-      spaceKey.classList.add(active);
+      spaceKey.classList.add("active");
     };
     if(e.code == "ShiftLeft"){
-      spaceKey.classList.remove("active");
+      shiftLeft.classList.add("active");
+    }
+    if(e.code == "ShiftRight"){
+      shiftRight.classList.add("active");
+    }
+    if(e.code == "CapsLock"){
+      caps.classList.toggle("active");
+    }
+    if(e.code == "Enter"){
+      enter.classList.add("active");
     }
   })
 })
@@ -139,8 +149,24 @@ window.addEventListener("keyup", (e)=>{
       key.classList.remove("active");
       key.classList.add("remove");
     }
+    if(e.code == "Space"){
+      spaceKey.classList.remove("active");
+      spaceKey.classList.add("remove");
+    };
+    if(e.code == "ShiftLeft"){
+      shiftLeft.classList.remove("active");
+      shiftLeft.classList.add("remove");
+    }
+    if(e.code == "ShiftRight"){
+      shiftRight.classList.remove("active");
+      shiftRight.classList.add("remove");
+    }
+    if(e.code == "Enter"){
+      enter.classList.remove("active");
+      enter.classList.add("remove");
+    }
     setTimeout(() => {
-      key.remove(remove)
-    });
+      key.classList.remove("remove")
+    }, 200);
   })
 })
